@@ -26,7 +26,7 @@ private:
     float pitch_ = -19.0f;
     float speed_ = 8.0f;
     float sensitivity_ = 0.10f;
-    float zoom_ = 45.0f;
+    float zoom_ = 50.0f;
 
     void updateVectors();
     void lookAt(const glm::vec3& position, const glm::vec3& target);

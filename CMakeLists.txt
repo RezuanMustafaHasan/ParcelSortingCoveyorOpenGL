@@ -41,6 +41,7 @@ add_executable(conveyor_factory
     src/Camera.cpp
     src/Geometry.cpp
     src/FactoryScene.cpp
+    src/FactorySimulation.cpp
 )
 
 target_include_directories(conveyor_factory PRIVATE include)
@@ -59,3 +60,11 @@ add_custom_command(TARGET conveyor_factory POST_BUILD
 )
 
 set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT conveyor_factory)
+
+include(CTest)
+if(BUILD_TESTING)
+    add_executable(factory_simulation_tests tests/FactorySimulationTests.cpp src/FactorySimulation.cpp)
+    target_include_directories(factory_simulation_tests PRIVATE include)
+    target_link_libraries(factory_simulation_tests PRIVATE glm::glm)
+    add_test(NAME factory_simulation COMMAND factory_simulation_tests)
+endif()

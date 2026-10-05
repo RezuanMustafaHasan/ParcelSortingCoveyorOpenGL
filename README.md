@@ -6,18 +6,19 @@ A complete modern OpenGL 3.3 demonstration of an automated parcel-sorting room. 
 
 - Elevated input conveyor and lower processing conveyor
 - Gravity-driven, visibly rotating box drop between levels
-- Pool of eight reusable parcels with varied colors and sizes
-- Explicit box state machine: upper, falling, lower, scanning, gate approach, left/right exit, collected
+- Pool of twelve reusable parcels in route-matched blue and orange, with varied sizes
+- Explicit box state machine: upper, falling, lower, scanning, gate approach, left/right exit, dropping, collected
 - Scanner pause and blue scan feedback
-- Automatically aligned sorting gate with a fixed hierarchical pivot
+- Interlocked sorting gate with articulated guides, a fixed drive pivot, and smooth circular parcel turns
 - Left and right exit conveyors and color-coded collection bins
 - Rotating rollers and wall ventilation fan
 - Operating/scanning/paused stack lights
-- Phong ambient, diffuse, and specular lighting with inverse-transpose normal handling
-- Toggleable attenuated point light and a weak directional fill light
-- Factory room, rack, stored parcels, safety barrier, pipes, panel, supports, rails, and floor markings
+- Hemisphere ambient lighting, warm overhead fixtures, Phong materials, and filtered directional shadows
+- Toggleable attenuated overhead lights and directional daylight
+- Warm ivory and teal factory interior with three loaded racks, labelled cartons, packing bench, tool chest, forklift, pallet truck, staged pallet loads, compressor, drums, utility cabinets, fire equipment, windows, shutter, and safety markings
+- Automatic near-wall cutaway and unobstructed overhead inspection view
 - Delta-time movement, speed adjustment, reset, and continuous parcel reuse
-- Native fullscreen launch, runtime fullscreen toggle, free-look mouse camera, and three demonstration presets
+- Windowed launch on macOS, runtime fullscreen toggle, free-look mouse camera, and three demonstration presets
 
 ## Dependencies
 
@@ -58,7 +59,7 @@ cmake --build build -j
 
 The shader directory is copied beside the executable automatically. The program also supports being run directly from the project root.
 
-The application launches in native fullscreen. Pass `--windowed` when troubleshooting or when a windowed start is preferred; `F11` can switch modes at any time.
+On macOS the application opens in a window so it appears in the current desktop Space. Use `F11` for fullscreen. On other platforms it starts fullscreen; `--windowed` selects a window instead.
 
 ## Controls
 
@@ -83,9 +84,22 @@ The application launches in native fullscreen. Pass `--windowed` when troublesho
 
 ## Sorting logic
 
-Parcels receive alternating destinations when they are taken from the fixed-size pool. Blue, green, and brown parcels begin with a left destination; orange, yellow, and red parcels begin with a right destination. A parcel stops briefly at the scanner, which requests the correct gate angle. On approach it waits if necessary until the gate is within four degrees of its target. It then changes to the matching diagonal-exit state. Once it reaches a bin it remains briefly visible, becomes inactive, and is reused by a later spawn.
+Blue parcels go to lane A; orange parcels go to lane B. The scanner holds each parcel for 0.65 seconds. The leading parcel reserves the gate and waits for alignment within 0.1 degrees. The gate stays locked until the entire parcel clears the guides, including when `G` is pressed repeatedly. Upstream parcels queue with size-aware spacing, and the upper conveyor waits for a clear landing area.
 
-The gate model is built as `translate(pivot) * rotate(angle) * translate(child) * scale`, so its pivot never moves. Simulation updates and rendering are kept in separate methods.
+Shared layout dimensions drive the visible conveyor geometry and parcel routes. Parcels follow a constant-radius turn, rotate to face the exit belt, clear its end, then fall into the matching bin. Packing tape and labels rotate with their carton. Short simulation substeps preserve stable motion at low frame rates. Completed parcels are counted and recycled after collection.
+
+Rendering lives in `FactoryScene`; `FactorySimulation` runs independently of OpenGL so the sorting behaviour can be checked without a display.
+
+## Verification and preview captures
+
+```bash
+ctest --test-dir build --output-on-failure
+./build/conveyor_factory --capture /tmp/factory.ppm --time 24 --view 1
+```
+
+The simulation checks cover both destinations, parcel spacing, gate ownership, conveyor clearance, bin landings, pause/reset, speed changes, and repeated manual gate requests. They run at three conveyor speeds and frame intervals from 1/144 second to 1/10 second.
+
+`--capture` renders one deterministic PPM image in a hidden OpenGL window and exits. Use `--view 1`, `2`, or `3` for the overview, top, or side camera. An available graphics context is still required.
 
 ## Source layout
 

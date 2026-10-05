@@ -4,7 +4,7 @@
 #include <algorithm>
 #include <cmath>
 
-Camera::Camera() { lookAt(position_, glm::vec3(0.0f, 2.0f, 0.5f)); }
+Camera::Camera() { setPreset(1); }
 
 glm::mat4 Camera::viewMatrix() const {
     return glm::lookAt(position_, position_ + front_, up_);
@@ -39,10 +39,10 @@ void Camera::lookAt(const glm::vec3& position, const glm::vec3& target) {
 }
 
 void Camera::setPreset(int preset) {
-    if (preset == 1) lookAt(glm::vec3(11.5f, 8.0f, 17.5f), glm::vec3(0.0f, 2.0f, 0.5f));
+    if (preset == 1) lookAt(glm::vec3(17.5f, 16.0f, 26.0f), glm::vec3(0.0f, 1.6f, 0.0f));
     // A tiny forward offset avoids a view vector exactly parallel to world-up.
-    if (preset == 2) lookAt(glm::vec3(0.0f, 22.0f, 1.0f), glm::vec3(0.0f, 0.0f, 1.35f));
-    if (preset == 3) lookAt(glm::vec3(13.5f, 5.0f, -2.5f), glm::vec3(0.0f, 2.5f, -2.5f));
+    if (preset == 2) lookAt(glm::vec3(0.0f, 36.0f, 0.0f), glm::vec3(0.0f, 0.0f, -0.05f));
+    if (preset == 3) lookAt(glm::vec3(17.5f, 8.0f, -2.5f), glm::vec3(0.0f, 2.5f, -2.5f));
 }
 
 void Camera::updateVectors() {

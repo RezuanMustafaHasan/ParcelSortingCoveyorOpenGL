@@ -3,6 +3,7 @@
 #include <glad/gl.h>
 #include <glm/glm.hpp>
 #include <string>
+#include <unordered_map>
 
 class Shader {
 public:
@@ -21,6 +22,8 @@ public:
 
 private:
     GLuint id_ = 0;
+    mutable std::unordered_map<std::string, GLint> uniformLocations_;
+    GLint uniformLocation(const std::string& name) const;
     static std::string readFile(const std::string& path);
     static GLuint compile(GLenum type, const std::string& source, const std::string& label);
 };
