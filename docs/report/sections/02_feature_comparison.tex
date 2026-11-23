@@ -1,0 +1,24 @@
+\section{Proposed and implemented features}
+\label{sec:feature_comparison}
+The proposed features are compared with the current C++ and GLSL implementation. \implemented{} indicates a completed feature; \adapted{} indicates a modification to the original design.
+\par{\small\begin{tabularx}{\textwidth}{@{}L{38mm}L{27mm}Y@{}}\toprule
+\textbf{Original proposal} & \textbf{Status} & \textbf{Final implementation}\\\midrule
+Conveyor, rails, legs, exits & \implemented & Two height levels and two branch belts; scaled cube/cylinder assemblies (p.~\pageref{sec:machine_objects}).\\
+Different moving boxes & \implemented & Four sizes, two colors and a fixed pool of 12 slots (p.~\pageref{sec:machine_objects}).\\
+Rotating rollers & \implemented & Eight end rollers and moving belt strips; transfer-deck rollers remain static (p.~\pageref{sec:transfer}).\\
+Flat gate at a pivot & \adapted & A rotating drive/linkage and articulated guide segments replace one flat board (pp.~\pageref{sec:scanner_gate}--\pageref{sec:routes}).\\
+Green/red route lamp & \adapted & A red/yellow/green status tower shows pause/scan/run. Routes use blue/orange colors; the exact route lamp was not implemented (p.~\pageref{sec:controls}).\\
+Floor plane & \implemented & Thin cuboid floor, work zone, safety lines and procedural grain (pp.~\pageref{sec:objects_modelling},\pageref{sec:lights}).\\
+Model transformations & \implemented & Translation, rotation, scale and parent-child transforms (p.~\pageref{sec:objects_modelling}).\\
+Box, roller, gate motion & \implemented & Time-based updates, gravity, animated angles and gate targets (pp.~\pageref{sec:transfer}--\pageref{sec:routes}).\\
+Overhead point lighting & \implemented & Four warm lights, distance attenuation and a light toggle (p.~\pageref{sec:lights}).\\
+Phong shading & \implemented & Per-fragment lighting with Blinn-Phong highlights; Gouraud mode added (p.~\pageref{sec:shading}).\\
+Angled and top views & \implemented & Overview/top/side presets, free camera, mouse look and zoom (p.~\pageref{sec:controls}).\\
+Pause, speed, gate keys & \implemented & Keyboard callbacks and held camera movement (p.~\pageref{sec:controls}).\\
+Continuous operation & \implemented & Timed spawning, counting, collection and slot reuse (p.~\pageref{sec:routes}).\\\bottomrule
+\end{tabularx}}\par
+\subsection{Features added to the final project}
+Two-level gravity transfer; scanner feedback; queue spacing; gate reservation; curved routes; labeled collection bins; counters; factory racks, vehicles and tools; rotating fan; directional shadows; Gouraud comparison; camera cutaway; reset; frame capture; simulation tests.
+
+\subsection{Simulation architecture}
+Each parcel stores its position, dimensions, destination and stage. \code{FactorySimulation} updates this data; \code{FactoryScene} renders it. Gate and parcel motion use prescribed trajectories rather than calculated contact forces. Queue rules maintain parcel spacing.

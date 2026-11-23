@@ -1,0 +1,83 @@
+Report verification - 6 October 2026 (Asia/Dhaka)
+Environment: macOS 26.3, Apple Clang 17.0.0, CMake 4.4.3
+
+Build command: cmake --build build -j
+Result: success; all targets built.
+
+Test command: ctest --test-dir build --output-on-failure
+Result: 1/1 registered tests passed.
+
+Detailed test command: ./build/factory_simulation_tests
+PASS speed=0.65 dt=0.00694444 manual=0 sorted=33
+PASS speed=0.65 dt=0.0333333 manual=0 sorted=33
+PASS speed=0.65 dt=0.1 manual=0 sorted=33
+PASS speed=1.55 dt=0.00694444 manual=0 sorted=71
+PASS speed=1.55 dt=0.0333333 manual=0 sorted=71
+PASS speed=1.55 dt=0.1 manual=0 sorted=71
+PASS speed=3 dt=0.00694444 manual=0 sorted=93
+PASS speed=3 dt=0.0333333 manual=0 sorted=93
+PASS speed=3 dt=0.1 manual=0 sorted=93
+PASS speed=3 dt=0.0166667 manual=1 sorted=93
+PASS pause, reset and changing speed
+
+Capture commands, run from project root:
+./build/conveyor_factory --capture tmp/pdfs/overview.ppm --time 24 --view 1
+./build/conveyor_factory --capture tmp/pdfs/top.ppm --time 24 --view 2
+./build/conveyor_factory --capture tmp/pdfs/side.ppm --time 5.1 --view 3
+./build/conveyor_factory --capture tmp/pdfs/falling.ppm --time 4.75 --view 3
+./build/conveyor_factory --gouraud --capture tmp/pdfs/gouraud.ppm --time 24 --view 1
+Result: all succeeded. PPM files converted to PNG with Pillow.
+Framebuffer resolution: 2560 x 1440 for all captures.
+
+Scope: simulation behavior was tested; captures verified both shader modes.
+Interactive controls were verified from source, not individually exercised.
+No renderer frame-rate benchmark was performed.
+
+Illustrated report revision - 6 October 2026:
+21 custom-camera frames captured at 2560 x 1440 using the inspected application renderer/simulation/shaders.
+Temporary capture sources are in tools/: original main/camera copies with custom camera, light/pause flags and state logging.
+Application source files were not modified. The original scene and simulation object files were linked unchanged.
+Camera values, capture time, flags, gate angle, active parcel states and counters are in assets/capture_metadata.json.
+Exact image crops are in assets/crop_manifest.json; pixel equality against each full frame was verified.
+No screenshot resampling, color edits, synthetic scene objects or generative images were used.
+Run/scanning/paused tower states, both gate directions, transfer stages, collection, lights on/off and both shading modes were captured.
+State evidence: first parcel UpperConveyor at 4.10 s, Falling at 4.75 s, LowerConveyor at 5.30 s, Scanning at 6.70 s, LeftExit with gate -37.5 at 10.20 s, Collected with A=1 at 13.15 s.
+At 12.25 s the orange parcel is in RightExit and gate=37.5. At 24 s cabinet counters are A=2, B=2.
+
+Final report checks (illustrated revision):
+XeLaTeX compiled successfully; all references/citations resolved.
+No warnings, overfull/underfull boxes, missing characters or unresolved-reference markers.
+PDF: 14 A4 pages including cover/references; 11-point body text.
+Libre Baskerville Regular/Bold/Italic embedded; all PDF fonts embedded with Unicode maps.
+Font files, original OFL license and provenance included; no system-font installation needed.
+All 14 latest rendered pages visually reviewed after final edits.
+Image aspect ratios preserved; callout targets and before/after framing checked.
+Student details checked; all 18 implementation hashes unchanged.
+All inputs, images, fonts and capture helper files included in the delivery ZIP.
+Previous text-focused revision preserved in output/archive/conveyor_sorting_report_text_focused.zip.
+
+Academic report revision - 6 October 2026 (Asia/Dhaka):
+Formal headings and targeted prose edits; original font, technical specifications and screenshots retained.
+Body spacing increased from the original 1.02 baseline multiplier to standard LaTeX onehalfspacing.
+Classic Phong reflection, Phong normal interpolation and Gouraud color interpolation equations added.
+The implemented Blinn-Phong specular term remains distinguished from classic Phong reflection.
+Removed the results/tests/limitations, implementation reproduction and sources/references/template sections.
+Removed the bibliography, associated citation commands and final access-date paragraph.
+Retained the overhead factory screenshot in the camera subsection.
+All 25 screenshot placements retained; all 51 original asset files verified byte-for-byte with SHA-256.
+Selected figure display widths reduced proportionally to avoid nearly empty continuation pages.
+XeLaTeX compiled successfully; no warnings, overfull/underfull boxes, missing characters or unresolved references.
+PDF: 13 A4 pages including cover; original 11-point body font retained; all fonts embedded with Unicode maps.
+All 13 final rendered pages visually inspected; equations, captions, tables, page numbers and internal page references verified.
+No application source files were edited or application tests rerun for this document-only revision.
+Updated PDF and complete editable LaTeX bundle delivered under output/.
+
+KUET cover revision - 6 October 2026 (Asia/Dhaka):
+Added the KUET logo, institution name and Department of Computer Science and Engineering.
+Changed Student ID to Roll; added Year 4th and Semester 1st; retained the course number and title.
+Set report date to 7 October 2026, interpreting the user's ampersand as a shifted 7.
+Removed the final design-and-implementation sentence from the cover.
+Logo aspect ratio and transparency retained; the original cover screenshot remains included at a reduced display width.
+XeLaTeX compiled cleanly with no warnings; the complete report remains 13 A4 pages.
+Cover visually inspected; all 12 body-page renders are byte-identical to the previously reviewed academic report.
+All 51 original asset files remain byte-identical; the logo is the only added image asset.

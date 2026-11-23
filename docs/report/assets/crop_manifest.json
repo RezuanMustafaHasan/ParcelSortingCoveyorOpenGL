@@ -1,0 +1,222 @@
+[
+  {
+    "source": "machine.png",
+    "output": "machine_detail.png",
+    "crop_pixels": [
+      486,
+      389,
+      2048,
+      1339
+    ]
+  },
+  {
+    "source": "transfer_before.png",
+    "output": "transfer_before_crop.png",
+    "crop_pixels": [
+      0,
+      72,
+      2509,
+      1339
+    ]
+  },
+  {
+    "source": "transfer_fall.png",
+    "output": "transfer_fall_crop.png",
+    "crop_pixels": [
+      0,
+      72,
+      2509,
+      1339
+    ]
+  },
+  {
+    "source": "transfer_landed.png",
+    "output": "transfer_landed_crop.png",
+    "crop_pixels": [
+      0,
+      72,
+      2509,
+      1339
+    ]
+  },
+  {
+    "source": "scanner.png",
+    "output": "scanner_crop.png",
+    "crop_pixels": [
+      51,
+      43,
+      2534,
+      1224
+    ]
+  },
+  {
+    "source": "gate_left.png",
+    "output": "gate_left_crop.png",
+    "crop_pixels": [
+      435,
+      72,
+      2125,
+      1411
+    ]
+  },
+  {
+    "source": "gate_right.png",
+    "output": "gate_right_crop.png",
+    "crop_pixels": [
+      435,
+      72,
+      2125,
+      1411
+    ]
+  },
+  {
+    "source": "collection.png",
+    "output": "collection_crop.png",
+    "crop_pixels": [
+      742,
+      317,
+      2304,
+      1037
+    ]
+  },
+  {
+    "source": "forklift.png",
+    "output": "forklift_crop.png",
+    "crop_pixels": [
+      0,
+      0,
+      2560,
+      1440
+    ]
+  },
+  {
+    "source": "racks.png",
+    "output": "racks_crop.png",
+    "crop_pixels": [
+      0,
+      0,
+      2560,
+      1440
+    ]
+  },
+  {
+    "source": "fan.png",
+    "output": "fan_crop.png",
+    "crop_pixels": [
+      0,
+      0,
+      2560,
+      1440
+    ]
+  },
+  {
+    "source": "utilities.png",
+    "output": "utilities_crop.png",
+    "crop_pixels": [
+      0,
+      0,
+      2560,
+      1440
+    ]
+  },
+  {
+    "source": "phong_detail.png",
+    "output": "phong_detail_crop.png",
+    "crop_pixels": [
+      0,
+      115,
+      2509,
+      1267
+    ]
+  },
+  {
+    "source": "gouraud_detail.png",
+    "output": "gouraud_detail_crop.png",
+    "crop_pixels": [
+      0,
+      115,
+      2509,
+      1267
+    ]
+  },
+  {
+    "source": "lights_on.png",
+    "output": "lights_on_crop.png",
+    "crop_pixels": [
+      0,
+      72,
+      2560,
+      1368
+    ]
+  },
+  {
+    "source": "lights_off.png",
+    "output": "lights_off_crop.png",
+    "crop_pixels": [
+      0,
+      72,
+      2560,
+      1368
+    ]
+  },
+  {
+    "source": "machine.png",
+    "output": "shadow_detail.png",
+    "crop_pixels": [
+      486,
+      893,
+      2048,
+      1296
+    ]
+  },
+  {
+    "source": "cabinet.png",
+    "output": "cabinet_crop.png",
+    "crop_pixels": [
+      870,
+      317,
+      1690,
+      1051
+    ]
+  },
+  {
+    "source": "tower_run.png",
+    "output": "tower_run_crop.png",
+    "crop_pixels": [
+      1101,
+      734,
+      1434,
+      1238
+    ]
+  },
+  {
+    "source": "tower_scan.png",
+    "output": "tower_scan_crop.png",
+    "crop_pixels": [
+      1101,
+      734,
+      1434,
+      1238
+    ]
+  },
+  {
+    "source": "tower_pause.png",
+    "output": "tower_pause_crop.png",
+    "crop_pixels": [
+      1101,
+      734,
+      1434,
+      1238
+    ]
+  },
+  {
+    "source": "top_flow.png",
+    "output": "top_layout.png",
+    "crop_pixels": [
+      0,
+      29,
+      2560,
+      1411
+    ]
+  }
+]

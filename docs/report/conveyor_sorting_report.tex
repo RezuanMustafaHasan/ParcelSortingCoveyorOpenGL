@@ -1,0 +1,97 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{lmodern}
+\usepackage{fontspec}
+\setmainfont{LibreBaskerville}[Path=fonts/,Extension=.ttf,UprightFont=*-Regular,BoldFont=*-Bold,ItalicFont=*-Italic,BoldItalicFont=*-BoldItalic,Ligatures=TeX]
+\setmonofont{lmmono10-regular.otf}[Scale=0.88]
+\usepackage[a4paper,margin=18mm,headheight=16pt,headsep=8mm,footskip=10mm]{geometry}
+\usepackage{microtype,amsmath,amssymb,graphicx,booktabs,tabularx,array}
+\usepackage[table]{xcolor}
+\usepackage{enumitem,fancyhdr,titlesec,tikz,caption,float,listings,setspace}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[hidelinks]{hyperref}
+\definecolor{accent}{HTML}{12636A}
+\definecolor{ink}{HTML}{24343D}
+\definecolor{light}{HTML}{EDF4F3}
+\definecolor{orange}{HTML}{B85D17}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\onehalfspacing
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\setlist{nosep,leftmargin=1.5em}
+\setlist[enumerate]{itemsep=3pt}
+\raggedbottom
+\clubpenalty=10000\widowpenalty=10000
+\titleformat{\section}{\fontsize{17}{21}\selectfont\bfseries\color{black}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{black}}{}{0em}{}
+\titlespacing*{\section}{0pt}{4pt}{7pt}
+\titlespacing*{\subsection}{0pt}{8pt}{3pt}
+\captionsetup{font=small,labelfont=bf,skip=4pt,justification=raggedright,singlelinecheck=false}
+\setlength{\intextsep}{7pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\fontsize{8.5}{10}\selectfont OpenGL Conveyor Box Sorting System}
+\fancyhead[R]{\fontsize{8.5}{10}\selectfont CSE 4102}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\code}[1]{{\urlstyle{tt}\nolinkurl{#1}}}
+\newcommand{\source}[1]{\par{\fontsize{8.5}{11}\selectfont\raggedright\textbf{Implementation:} #1\par}}
+\newcommand{\note}[1]{\par\noindent #1\par}
+\newcommand{\implemented}{\textbf{Implemented}}
+\newcommand{\adapted}{\textbf{Adapted}}
+\newenvironment{shot}[3][\linewidth]{\def\shotcaption{#3}\begin{figure}[H]\centering\begin{tikzpicture}\node[anchor=south west,inner sep=0] (shot) at (0,0) {\includegraphics[width=#1]{#2}};\begin{scope}[x={(shot.south east)},y={(shot.north west)}]}{\end{scope}\end{tikzpicture}\caption{\shotcaption}\end{figure}}
+\newcommand{\callout}[3]{\draw[white,line width=2.2pt] (#2)--(#1);\draw[accent,line width=0.75pt,-{Latex[length=1.8mm]}] (#2)--(#1);\node[fill=white,draw=accent,rounded corners=1pt,inner sep=3pt,font=\fontsize{8}{10}\selectfont\bfseries,text=ink] at (#2) {#3};}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,keepspaces=true,frame=single,rulecolor=\color{accent!30},backgroundcolor=\color{light},showstringspaces=false,aboveskip=5pt,belowskip=5pt}
+\hypersetup{pdftitle={OpenGL Conveyor Box Sorting System - Final Project Report},pdfauthor={Rezuan Mustafa Hasan}}
+\begin{document}
+\setlength{\abovedisplayskip}{5pt}\setlength{\belowdisplayskip}{5pt}
+\setlength{\abovedisplayshortskip}{3pt}\setlength{\belowdisplayshortskip}{3pt}
+\begin{titlepage}\centering\setstretch{1.12}
+\vspace*{3mm}
+\includegraphics[height=35mm]{assets/kuet_logo.png}\par
+\vspace{4mm}
+{\fontsize{16}{21}\selectfont\bfseries Khulna University of Engineering and Technology\par}
+\vspace{2mm}
+{\normalsize Department of Computer Science and Engineering\par}
+\vspace{7mm}
+{\fontsize{24}{30}\selectfont\bfseries OpenGL Conveyor\\Box Sorting System\par}
+\vspace{3mm}
+{\Large Final Project Report\par}
+\vspace{2mm}
+{\normalsize Automated Multi-Level Conveyor Sorting Factory\par}
+\vspace{6mm}
+\includegraphics[width=0.74\textwidth]{assets/overview.png}\par
+\vspace{6mm}
+\begin{tabular}{rl}
+\textbf{Student} & Rezuan Mustafa Hasan\\
+\textbf{Roll} & 2107075\\
+\textbf{Year} & 4th\\
+\textbf{Semester} & 1st\\
+\textbf{Course no} & CSE 4102\\
+\textbf{Course title} & Computer Graphics and Image Processing\\
+\textbf{Report date} & 7 October 2026
+\end{tabular}
+\vfill
+\end{titlepage}
+\setcounter{page}{2}
+\input{sections/01_visual_tour}
+\clearpage
+\input{sections/02_feature_comparison}
+\clearpage
+\input{sections/03_machine_objects}
+\clearpage
+\input{sections/04_transfer}
+\clearpage
+\input{sections/05_scanner_gate}
+\clearpage
+\input{sections/06_routes}
+\clearpage
+\input{sections/07_objects_modelling}
+\clearpage
+\input{sections/08_shading}
+\clearpage
+\input{sections/09_lights}
+\clearpage
+\input{sections/10_controls}
+\end{document}

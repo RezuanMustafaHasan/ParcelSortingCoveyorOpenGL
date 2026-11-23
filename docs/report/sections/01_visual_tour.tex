@@ -1,0 +1,24 @@
+\section{System overview}
+\label{sec:visual_tour}
+The project simulates an automated warehouse sorting system using OpenGL. Boxes enter on an upper conveyor, fall onto a lower conveyor, stop for a simulated scan, and follow one of two exits. Blue boxes are directed to bin A, while orange boxes are directed to bin B.
+\begin{shot}{assets/overview.png}{The complete rendered factory. Labels identify the sorting machine and the surrounding objects.}
+\callout{0.47,0.56}{0.19,0.80}{Sorting machine}
+\callout{0.35,0.48}{0.18,0.34}{Parked forklift}
+\callout{0.67,0.59}{0.78,0.82}{Storage racks}
+\callout{0.59,0.445}{0.83,0.30}{Control cabinet}
+\callout{0.69,0.69}{0.87,0.66}{Wall fan}
+\end{shot}
+\subsection{Sorting sequence}
+\begin{enumerate}
+\item \textbf{Entry and transport:} colored cuboid parcels travel on the upper conveyor.
+\item \textbf{Transfer and scanning:} a parcel falls onto the lower belt, then waits 0.65 s at the scanner.
+\item \textbf{Routing and collection:} the gate aligns with the assigned route. The parcel turns, drops into its bin, and increments the corresponding counter.
+\end{enumerate}
+\note{The scanner is simulated, and the destination is assigned when a parcel is spawned. The gate and parcel trajectory use coordinated animations.}
+\subsection{Technical specifications}
+\par{\small\begin{tabularx}{\textwidth}{@{}L{34mm}Y@{}}\toprule
+Software & C++17, OpenGL 3.3 Core requested, GLSL 330, CMake 3.20+.\\
+Dependencies & GLFW 3.3.9, GLAD 2.0.6, GLM 0.9.9.8.\\
+Scene construction & Reusable cubes and cylinders; no imported factory model or image texture.\\
+Simulation and rendering & 12 reusable parcel slots, four point lights, daylight and shadows.\\\bottomrule
+\end{tabularx}}\par

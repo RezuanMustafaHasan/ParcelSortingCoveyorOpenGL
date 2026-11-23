@@ -19,6 +19,7 @@ Camera camera;
 FactoryScene* scene = nullptr;
 bool firstMouse = true;
 bool mouseCaptured = true;
+bool gouraudShading = false; // Keep the original Phong shading on startup.
 #ifdef __APPLE__
 // macOS may move an exclusive fullscreen window to a different Space at
 // startup. Open where the user launched the program; F11 still enters fullscreen.
@@ -99,6 +100,10 @@ void keyCallback(GLFWwindow* window, int key, int, int action, int) {
     if (key == GLFW_KEY_R) scene->reset();
     if (key == GLFW_KEY_G) scene->testGate();
     if (key == GLFW_KEY_L) scene->toggleMainLight();
+    if (key == GLFW_KEY_P) {
+        gouraudShading = !gouraudShading;
+        std::cout << "Shading: " << (gouraudShading ? "Gouraud" : "Phong") << '\n' << std::flush;
+    }
     if (key >= GLFW_KEY_1 && key <= GLFW_KEY_3) {
         camera.setPreset(key - GLFW_KEY_0);
         firstMouse = true;
@@ -172,6 +177,7 @@ void printControls() {
         << "R           Reset simulation\n"
         << "G           Manually test sorting gate\n"
         << "L           Toggle overhead point light\n"
+        << "P           Toggle Phong / Gouraud shading (default: Phong)\n"
         << "1 / 2 / 3   Perspective / top / side camera\n"
         << "W A S D     Move camera\n"
         << "Q / E       Move camera down / up\n"
@@ -192,10 +198,11 @@ int main(int argc, char** argv) {
         for(int i=1;i<argc;++i) {
             const std::string arg(argv[i]);
             if(arg == "--windowed") fullscreen = false;
+            else if(arg == "--gouraud") gouraudShading = true;
             else if(arg == "--capture" && i+1<argc) { capturePath=argv[++i]; fullscreen=false; }
             else if(arg == "--time" && i+1<argc) previewTime=std::stof(argv[++i]);
             else if(arg == "--view" && i+1<argc) preset=std::stoi(argv[++i]);
-            else throw std::runtime_error("Usage: conveyor_factory [--windowed] [--capture frame.ppm] [--time seconds] [--view 1|2|3]");
+            else throw std::runtime_error("Usage: conveyor_factory [--windowed] [--gouraud] [--capture frame.ppm] [--time seconds] [--view 1|2|3]");
         }
         if (!std::isfinite(previewTime) || previewTime < 0 || previewTime > 3600 || preset < 1 || preset > 3)
             throw std::runtime_error("Time must be 0..3600 seconds; view must be 1, 2 or 3.");
@@ -303,6 +310,7 @@ int main(int argc, char** argv) {
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
             shader.use();
+            shader.setBool("useGouraud", gouraudShading);
             shader.setMat4("view", camera.viewMatrix());
             shader.setMat4("projection", glm::perspective(glm::radians(camera.zoom()),
                            static_cast<float>(width) / static_cast<float>(height > 0 ? height : 1), 0.1f, 100.0f));

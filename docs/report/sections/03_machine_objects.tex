@@ -1,0 +1,22 @@
+\section{Machine parts and specifications}
+\label{sec:machine_objects}
+\begin{shot}{assets/machine_detail.png}{Main machine at 24 s. The same blue/orange route colors continue from boxes to exits and bins.}
+\callout{0.62,0.86}{0.79,0.91}{1 Upper belt}
+\callout{0.46,0.65}{0.19,0.77}{2 Scanner}
+\callout{0.39,0.49}{0.18,0.50}{3 Guide gate}
+\callout{0.14,0.30}{0.16,0.14}{4 Blue bin A}
+\callout{0.40,0.14}{0.77,0.08}{5 Orange bin B}
+\callout{0.77,0.47}{0.83,0.61}{6 Cabinet}
+\end{shot}
+All lengths are expressed in scene units. The $x$ axis represents the lateral direction, the $y$ axis represents height, and the $z$ axis represents the longitudinal direction. Dimensions are given as width, height and length before rotation.
+\par{\small\begin{tabularx}{\textwidth}{@{}L{34mm}Y@{}}\toprule
+\textbf{Part} & \textbf{Specification}\\\midrule
+Upper conveyor & Centre $(0,4.00,-4.50)$; width 2.10; length 6.70; end $z=-1.15$.\\
+Lower conveyor & Centre $(0,1.45,1.48)$; width 2.10; length 5.36. Belt tops are 0.10 above base height.\\
+Branch belts & Width 2.00; yaw $\pm37.5^\circ$; 1.80-unit turn plus 3.70-unit straight exit.\\
+Scanner and gate & Scanner $z=1.75$; beam $(3.00,0.40,0.60)$ at $y=3.50$. Gate pivot $(0,1.45,4.00)$; seven guide pairs.\\
+Collection bins & Base $(2.28,0.18,2.00)$; walls 1.10 high; floor top $y=0.30$; centers at route distance 6.15.\\
+Rollers and cabinet & End roller diameter 0.23; legs $0.14\times0.14$. Cabinet body $(1.90,2.80,0.78)$, yaw $-16^\circ$.\\\bottomrule
+\end{tabularx}}\par
+\textbf{Four parcel sizes:} $(0.86,0.70,0.82)$, $(1.03,0.82,0.90)$, $(0.78,0.62,0.96)$, $(1.10,0.76,0.84)$. Bodies, tape, labels and five barcode-like strips share a parent transform.
+\source{\code{include/FactorySimulation.h}: \code{FactoryLayout}; \code{src/FactoryScene.cpp}: conveyor, parcel, scanner, gate and bin drawing.}

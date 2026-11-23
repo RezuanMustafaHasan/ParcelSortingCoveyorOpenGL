@@ -1,7 +1,66 @@
+# Out-of-source builds and CMake-generated files
 /build*/
-/.vs/
+/cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Testing/
+compile_commands.json
+
+# Compiled binaries and libraries
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.dSYM/
+
+# Local exports, presentation work, and scratch files
+/output/
+/tmp/
+/.presentation-build/
+*.pptx
+*.pdf
+*.ppm
+/docs/report/tools/regenerated/
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# LaTeX output (keep .tex sources, screenshots, and licensed fonts)
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+
+# Editor and operating-system files
+.vs/
+.vscode/
+.idea/
 *.user
 *.suo
-*.exe
-*.dll
-*.o
+.DS_Store
+Thumbs.db
+Desktop.ini
+*~
+*.swp
+
+# Local configuration
+.env
+.env.*
+!.env.example

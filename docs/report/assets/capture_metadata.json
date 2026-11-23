@@ -1,0 +1,239 @@
+[
+  {
+    "name": "cabinet",
+    "time": 24,
+    "camera": "9,3.8,5,6.65,1.65,1.1,38",
+    "options": {},
+    "state": "REPORT_STATE gate=31.9332 A=2 B=2\nslot=0 state=4 pos=0,1.86,1.8 timer=1.70019 route=0\nslot=1 state=2 pos=0,1.93,0.5 timer=1.36686 route=0\nslot=2 state=0 pos=0,4.51,-5.2118 timer=1.50853 route=0\nslot=4 state=5 pos=-1.91817,1.9,7.43337 timer=2.59187 route=4.01737\nslot=5 state=4 pos=0,1.96,3.13 timer=4.40855 route=0\nslot=6 state=0 pos=0,4.45,-1.33683 timer=4.00855 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "fan",
+    "time": 24,
+    "camera": "8,6,-6,6.6,6,-11.3,38",
+    "options": {},
+    "state": "REPORT_STATE gate=31.9332 A=2 B=2\nslot=0 state=4 pos=0,1.86,1.8 timer=1.70019 route=0\nslot=1 state=2 pos=0,1.93,0.5 timer=1.36686 route=0\nslot=2 state=0 pos=0,4.51,-5.2118 timer=1.50853 route=0\nslot=4 state=5 pos=-1.91817,1.9,7.43337 timer=2.59187 route=4.01737\nslot=5 state=4 pos=0,1.96,3.13 timer=4.40855 route=0\nslot=6 state=0 pos=0,4.45,-1.33683 timer=4.00855 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "phong_detail",
+    "time": 24,
+    "camera": "4.2,4.2,6.5,0,1.9,3.6,38",
+    "options": {},
+    "state": "REPORT_STATE gate=31.9332 A=2 B=2\nslot=0 state=4 pos=0,1.86,1.8 timer=1.70019 route=0\nslot=1 state=2 pos=0,1.93,0.5 timer=1.36686 route=0\nslot=2 state=0 pos=0,4.51,-5.2118 timer=1.50853 route=0\nslot=4 state=5 pos=-1.91817,1.9,7.43337 timer=2.59187 route=4.01737\nslot=5 state=4 pos=0,1.96,3.13 timer=4.40855 route=0\nslot=6 state=0 pos=0,4.45,-1.33683 timer=4.00855 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "gouraud_detail",
+    "time": 24,
+    "camera": "4.2,4.2,6.5,0,1.9,3.6,38",
+    "options": {
+      "gouraud": "1"
+    },
+    "state": "REPORT_STATE gate=31.9332 A=2 B=2\nslot=0 state=4 pos=0,1.86,1.8 timer=1.70019 route=0\nslot=1 state=2 pos=0,1.93,0.5 timer=1.36686 route=0\nslot=2 state=0 pos=0,4.51,-5.2118 timer=1.50853 route=0\nslot=4 state=5 pos=-1.91817,1.9,7.43337 timer=2.59187 route=4.01737\nslot=5 state=4 pos=0,1.96,3.13 timer=4.40855 route=0\nslot=6 state=0 pos=0,4.45,-1.33683 timer=4.00855 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "lights_on",
+    "time": 24,
+    "camera": "11,11,18,0,2,0,38",
+    "options": {},
+    "state": "REPORT_STATE gate=31.9332 A=2 B=2\nslot=0 state=4 pos=0,1.86,1.8 timer=1.70019 route=0\nslot=1 state=2 pos=0,1.93,0.5 timer=1.36686 route=0\nslot=2 state=0 pos=0,4.51,-5.2118 timer=1.50853 route=0\nslot=4 state=5 pos=-1.91817,1.9,7.43337 timer=2.59187 route=4.01737\nslot=5 state=4 pos=0,1.96,3.13 timer=4.40855 route=0\nslot=6 state=0 pos=0,4.45,-1.33683 timer=4.00855 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "lights_off",
+    "time": 24,
+    "camera": "11,11,18,0,2,0,38",
+    "options": {
+      "REPORT_LIGHT_OFF": "1"
+    },
+    "state": "REPORT_STATE gate=31.9332 A=2 B=2\nslot=0 state=4 pos=0,1.86,1.8 timer=1.70019 route=0\nslot=1 state=2 pos=0,1.93,0.5 timer=1.36686 route=0\nslot=2 state=0 pos=0,4.51,-5.2118 timer=1.50853 route=0\nslot=4 state=5 pos=-1.91817,1.9,7.43337 timer=2.59187 route=4.01737\nslot=5 state=4 pos=0,1.96,3.13 timer=4.40855 route=0\nslot=6 state=0 pos=0,4.45,-1.33683 timer=4.00855 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "machine",
+    "time": 24,
+    "camera": "13,13,22,0,2,0,42",
+    "options": {},
+    "state": "REPORT_STATE gate=31.9332 A=2 B=2\nslot=0 state=4 pos=0,1.86,1.8 timer=1.70019 route=0\nslot=1 state=2 pos=0,1.93,0.5 timer=1.36686 route=0\nslot=2 state=0 pos=0,4.51,-5.2118 timer=1.50853 route=0\nslot=4 state=5 pos=-1.91817,1.9,7.43337 timer=2.59187 route=4.01737\nslot=5 state=4 pos=0,1.96,3.13 timer=4.40855 route=0\nslot=6 state=0 pos=0,4.45,-1.33683 timer=4.00855 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "collection",
+    "time": 13.15,
+    "camera": "2.5,8,12.5,-2.8,0.6,9,38",
+    "options": {},
+    "state": "REPORT_STATE gate=37.5 A=1 B=0\nslot=0 state=8 pos=-3.25575,0.65,9.17655 timer=0.241695 route=5.935\nslot=1 state=6 pos=0.762135,1.96,5.9268 timer=1.36669 route=2.11838\nslot=2 state=4 pos=0,1.86,3.1 timer=1.05836 route=0\nslot=3 state=2 pos=0,1.93,0.545376 timer=0.516694 route=0\nslot=4 state=0 pos=0,4.45,-2.65458 timer=3.15838 route=0\nslot=5 state=0 pos=0,4.51,-6.52955 timer=0.658361 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "tower_run",
+    "time": 24,
+    "camera": "4,4.2,6,2.25,3.4,3.15,42",
+    "options": {},
+    "state": "REPORT_STATE gate=31.9332 A=2 B=2\nslot=0 state=4 pos=0,1.86,1.8 timer=1.70019 route=0\nslot=1 state=2 pos=0,1.93,0.5 timer=1.36686 route=0\nslot=2 state=0 pos=0,4.51,-5.2118 timer=1.50853 route=0\nslot=4 state=5 pos=-1.91817,1.9,7.43337 timer=2.59187 route=4.01737\nslot=5 state=4 pos=0,1.96,3.13 timer=4.40855 route=0\nslot=6 state=0 pos=0,4.45,-1.33683 timer=4.00855 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "tower_scan",
+    "time": 6.7,
+    "camera": "4,4.2,6,2.25,3.4,3.15,42",
+    "options": {},
+    "state": "REPORT_STATE gate=-21.2472 A=0 B=0\nslot=0 state=3 pos=0,1.9,1.75 timer=0.249967 route=0\nslot=1 state=0 pos=0,4.51,-1.02718 timer=4.20832 route=0\nslot=2 state=0 pos=0,4.41,-4.90216 timer=1.7083 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "tower_pause",
+    "time": 24,
+    "camera": "4,4.2,6,2.25,3.4,3.15,42",
+    "options": {
+      "REPORT_PAUSED": "1"
+    },
+    "state": "REPORT_STATE gate=31.9332 A=2 B=2\nslot=0 state=4 pos=0,1.86,1.8 timer=1.70019 route=0\nslot=1 state=2 pos=0,1.93,0.5 timer=1.36686 route=0\nslot=2 state=0 pos=0,4.51,-5.2118 timer=1.50853 route=0\nslot=4 state=5 pos=-1.91817,1.9,7.43337 timer=2.59187 route=4.01737\nslot=5 state=4 pos=0,1.96,3.13 timer=4.40855 route=0\nslot=6 state=0 pos=0,4.45,-1.33683 timer=4.00855 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "forklift",
+    "time": 24,
+    "camera": "-2.9,4.8,9,-6.7,1.5,5.4,45",
+    "options": {},
+    "state": "REPORT_STATE gate=31.9332 A=2 B=2\nslot=0 state=4 pos=0,1.86,1.8 timer=1.70019 route=0\nslot=1 state=2 pos=0,1.93,0.5 timer=1.36686 route=0\nslot=2 state=0 pos=0,4.51,-5.2118 timer=1.50853 route=0\nslot=4 state=5 pos=-1.91817,1.9,7.43337 timer=2.59187 route=4.01737\nslot=5 state=4 pos=0,1.96,3.13 timer=4.40855 route=0\nslot=6 state=0 pos=0,4.45,-1.33683 timer=4.00855 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "racks",
+    "time": 24,
+    "camera": "-4.7,5.5,-2,-6.8,2,-6.8,50",
+    "options": {},
+    "state": "REPORT_STATE gate=31.9332 A=2 B=2\nslot=0 state=4 pos=0,1.86,1.8 timer=1.70019 route=0\nslot=1 state=2 pos=0,1.93,0.5 timer=1.36686 route=0\nslot=2 state=0 pos=0,4.51,-5.2118 timer=1.50853 route=0\nslot=4 state=5 pos=-1.91817,1.9,7.43337 timer=2.59187 route=4.01737\nslot=5 state=4 pos=0,1.96,3.13 timer=4.40855 route=0\nslot=6 state=0 pos=0,4.45,-1.33683 timer=4.00855 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "scanner",
+    "time": 6.7,
+    "camera": "-3.5,4.1,4.8,0,2,1.75,45",
+    "options": {},
+    "state": "REPORT_STATE gate=-21.2472 A=0 B=0\nslot=0 state=3 pos=0,1.9,1.75 timer=0.249967 route=0\nslot=1 state=0 pos=0,4.51,-1.02718 timer=4.20832 route=0\nslot=2 state=0 pos=0,4.41,-4.90216 timer=1.7083 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "gate_left",
+    "time": 10.2,
+    "camera": "0,20.5,7,0,1.5,6.5,25",
+    "options": {},
+    "state": "REPORT_STATE gate=-37.5 A=0 B=0\nslot=0 state=5 pos=-1.01371,1.9,6.25466 timer=1.63332 route=2.53164\nslot=1 state=4 pos=0,1.96,2.69289 timer=0.608316 route=0\nslot=2 state=2 pos=0,1.86,-0.156776 timer=0.0249833 route=0\nslot=3 state=0 pos=0,4.48,-3.35214 timer=2.70832 route=0\nslot=4 state=0 pos=0,4.45,-7.22711 timer=0.208317 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "gate_right",
+    "time": 12.25,
+    "camera": "0,20.5,7,0,1.5,6.5,25",
+    "options": {},
+    "state": "REPORT_STATE gate=37.5 A=0 B=0\nslot=0 state=5 pos=-2.94807,1.9,8.77556 timer=3.68337 route=5.70916\nslot=1 state=6 pos=0.0945813,1.96,4.71504 timer=0.466681 route=0.723356\nslot=2 state=4 pos=0,1.86,1.99544 timer=0.158348 route=0\nslot=3 state=1 pos=0,3.8934,-0.493158 timer=0.341681 route=0\nslot=4 state=0 pos=0,4.45,-4.04959 timer=2.25835 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "utilities",
+    "time": 24,
+    "camera": "4,4,1,8,1.6,-2.5,55",
+    "options": {},
+    "state": "REPORT_STATE gate=31.9332 A=2 B=2\nslot=0 state=4 pos=0,1.86,1.8 timer=1.70019 route=0\nslot=1 state=2 pos=0,1.93,0.5 timer=1.36686 route=0\nslot=2 state=0 pos=0,4.51,-5.2118 timer=1.50853 route=0\nslot=4 state=5 pos=-1.91817,1.9,7.43337 timer=2.59187 route=4.01737\nslot=5 state=4 pos=0,1.96,3.13 timer=4.40855 route=0\nslot=6 state=0 pos=0,4.45,-1.33683 timer=4.00855 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "top_flow",
+    "time": 24,
+    "camera": "0,20.5,1,0.05,1.5,1,35",
+    "options": {},
+    "state": "REPORT_STATE gate=31.9332 A=2 B=2\nslot=0 state=4 pos=0,1.86,1.8 timer=1.70019 route=0\nslot=1 state=2 pos=0,1.93,0.5 timer=1.36686 route=0\nslot=2 state=0 pos=0,4.51,-5.2118 timer=1.50853 route=0\nslot=4 state=5 pos=-1.91817,1.9,7.43337 timer=2.59187 route=4.01737\nslot=5 state=4 pos=0,1.96,3.13 timer=4.40855 route=0\nslot=6 state=0 pos=0,4.45,-1.33683 timer=4.00855 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "transfer_before",
+    "time": 4.1,
+    "camera": "6.5,6.3,-0.9,0,3,-1.1,45",
+    "options": {},
+    "state": "REPORT_STATE gate=0 A=0 B=0\nslot=0 state=0 pos=0,4.45,-1.19504 timer=4.10002 route=0\nslot=1 state=0 pos=0,4.51,-5.0571 timer=1.60833 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "transfer_fall",
+    "time": 4.75,
+    "camera": "6.5,6.3,-0.9,0,3,-1.1,45",
+    "options": {},
+    "state": "REPORT_STATE gate=0 A=0 B=0\nslot=0 state=1 pos=0,3.8914,-0.508338 timer=0.333327 route=0\nslot=1 state=0 pos=0,4.51,-4.04962 timer=2.25833 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  },
+  {
+    "name": "transfer_landed",
+    "time": 5.3,
+    "camera": "6.5,6.3,-0.9,0,3,-1.1,45",
+    "options": {},
+    "state": "REPORT_STATE gate=0 A=0 B=0\nslot=0 state=2 pos=0,1.9,-0.0201048 timer=0.15832 route=0\nslot=1 state=0 pos=0,4.51,-3.19714 timer=2.80833 route=0\nslot=2 state=0 pos=0,4.41,-7.07211 timer=0.30832 route=0",
+    "resolution": [
+      2560,
+      1440
+    ]
+  }
+]

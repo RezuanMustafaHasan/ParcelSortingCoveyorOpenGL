@@ -1,0 +1,10 @@
+Libre Baskerville font provenance
+Downloaded: 6 October 2026
+Official static TTF files: https://api.github.com/repos/impallari/Libre-Baskerville/contents/fonts/ttf
+License copy: https://github.com/google/fonts/blob/main/ofl/librebaskerville/OFL.txt
+Fonts are included unmodified.
+
+LibreBaskerville-Bold.ttf: Version 2.005; ttfautohint (v1.8.4.7-5d5b); SHA256 62e23c5e6bf1e68fc0ef4ddeeab894ac21c808027f6cb6730cda2055a159ae03
+LibreBaskerville-BoldItalic.ttf: Version 2.005; ttfautohint (v1.8.4.7-5d5b); SHA256 5b9fcb6c9532a0f27202fc3801f81453d62a5cd0601aaa63c240fd0dea832caf
+LibreBaskerville-Italic.ttf: Version 2.005; ttfautohint (v1.8.4.7-5d5b); SHA256 82d05fab9a1c07f4eb4bc891fb0043a74fba1bed27ea919f61d94dbc5b54a4f6
+LibreBaskerville-Regular.ttf: Version 2.005; ttfautohint (v1.8.4.7-5d5b); SHA256 df9fddf43dbd7de435c316b86a52b3d6b3ad2f6fb2ed3f6fd8bdc1835f30eec1

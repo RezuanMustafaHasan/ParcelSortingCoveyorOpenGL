@@ -2,6 +2,9 @@
 struct PointLight { vec3 position; vec3 color; float constant; float linear; float quadratic; };
 in vec3 fragmentPosition;
 in vec3 normal;
+in vec3 gouraudColor;
+in vec3 gouraudDirectionalColor;
+uniform bool useGouraud;
 uniform vec3 materialColor;
 uniform float shininess;
 uniform float emissiveStrength;
@@ -26,6 +29,7 @@ float shadowAmount(vec3 n) {
         shadow += p.z - bias > texture(shadowMap, p.xy + vec2(x,y)*texel).r ? 1.0 : 0.0;
     return shadow / 9.0;
 }
+// Phong shading: per-pixel lighting, with the existing Blinn-Phong highlights.
 vec3 phong(vec3 direction, vec3 color, vec3 base) {
     vec3 n=normalize(normal), l=normalize(direction);
     float diffuse=max(dot(n,l),0.0);
@@ -36,20 +40,29 @@ vec3 phong(vec3 direction, vec3 color, vec3 base) {
 void main() {
     vec3 n=normalize(normal);
     vec3 base=materialColor;
+    float grainScale=1.0;
     if(floorMaterial) {
         float grain=fract(sin(dot(floor(fragmentPosition.xz*95.0),vec2(12.9898,78.233)))*43758.5453);
-        base*=0.95+grain*0.10;
+        grainScale=0.95+grain*0.10;
+        base*=grainScale;
     }
-    float sky=n.y*0.5+0.5;
-    vec3 ambient=mix(vec3(0.20,0.22,0.21),vec3(0.48,0.50,0.47),sky);
     float shadow=shadowAmount(n);
-    vec3 result=base*ambient;
-    result+=phong(-directionalDirection,directionalColor,base)*(1.0-shadow*0.78);
-    if(pointLightEnabled) for(int i=0;i<4;++i) {
-        vec3 d=pointLights[i].position-fragmentPosition;
-        float dist=length(d);
-        float attenuation=1.0/(pointLights[i].constant+pointLights[i].linear*dist+pointLights[i].quadratic*dist*dist);
-        result+=phong(d,pointLights[i].color,base)*attenuation*0.36;
+    vec3 result;
+    if(useGouraud) {
+        // Lighting comes from interpolated vertex colours; retain shadows and floor grain.
+        result=(gouraudColor+gouraudDirectionalColor*(1.0-shadow*0.78))*grainScale;
+    } else {
+        // Original Phong path stays the default.
+        float sky=n.y*0.5+0.5;
+        vec3 ambient=mix(vec3(0.20,0.22,0.21),vec3(0.48,0.50,0.47),sky);
+        result=base*ambient;
+        result+=phong(-directionalDirection,directionalColor,base)*(1.0-shadow*0.78);
+        if(pointLightEnabled) for(int i=0;i<4;++i) {
+            vec3 d=pointLights[i].position-fragmentPosition;
+            float dist=length(d);
+            float attenuation=1.0/(pointLights[i].constant+pointLights[i].linear*dist+pointLights[i].quadratic*dist*dist);
+            result+=phong(d,pointLights[i].color,base)*attenuation*0.36;
+        }
     }
     result+=base*emissiveStrength;
     // Gentle highlight rolloff retains the paint colours under bright fixtures.

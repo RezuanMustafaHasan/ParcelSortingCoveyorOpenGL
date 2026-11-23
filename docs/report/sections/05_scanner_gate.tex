@@ -1,0 +1,23 @@
+\section{Scanner and gate control}
+\label{sec:scanner_gate}
+\begin{shot}{assets/scanner_crop.png}{At 6.70 s the first blue parcel is in the Scanning state. The scanner frame, parcel label and scan line can be inspected at a larger scale.}
+\callout{0.48,0.35}{0.21,0.15}{Stopped parcel}
+\callout{0.47,0.51}{0.77,0.58}{Scan line}
+\callout{0.46,0.84}{0.23,0.91}{Scanner frame}
+\end{shot}
+\subsection{Scanning and gate reservation}
+\begin{enumerate}
+\item At $z=1.75$, the parcel stops for \textbf{0.65 s}. A bright line sweeps across its top: $z_{line}=1.75+0.43l\sin(15t)$.
+\item The parcel is marked scanned. Even spawn numbers correspond to the left/blue route; odd numbers correspond to the right/orange route. This assignment is made at spawning.
+\item The most advanced scanning/approaching parcel reserves the gate. Other boxes wait while that owner passes.
+\end{enumerate}
+\subsection{Gate movement and release}
+Left target is $-37.5^\circ$ and right target is $+37.5^\circ$. The code changes its angle by at most $85^\circ$/s:
+\begin{equation}
+\theta'=\theta+\operatorname{clamp}(\theta_{target}-\theta,-85\Delta t,85\Delta t).
+\end{equation}
+\code{clamp} limits a value to the given interval. A box enters only when it owns the gate and angle error is below $0.10^\circ$. Otherwise it waits at $z=4.00-l/2-0.42$. Ownership ends after route distance 2.75, or when the owner leaves the exit stage.
+
+The gate contains a fixed pivot, rotating linkage and seven guide pairs, at $d_i=0.25+0.29i$ for $i=0,\ldots,6$. For current angle $\alpha$ in radians, each guide uses $\beta_i=\alpha\min(d_i/1.80,1)$ and radius $1.80/\alpha$. Side offsets are $\pm1.07$, producing the curved channel shown next. A straight case avoids division by zero near angle zero.
+\note{\textbf{Manual gate control:} \code{G} alternates a requested angle for 2.25 s. Automatic ownership has priority; an occupied route remains stable.}
+\source{\code{FactorySimulation.cpp}: scanning/approach cases, \code{step()}, \code{testGate()}; \code{FactoryScene.cpp}: \code{drawScannerAndGate()}.}
