@@ -4,7 +4,7 @@ A C++17 and OpenGL 3.3 simulation of an automated parcel-sorting factory. Parcel
 
 ![Factory overview showing the elevated conveyor, scanner, sorting gate, collection bins, and warehouse equipment](docs/report/assets/overview.png)
 
-[Build and run](#build-and-run) · [Controls](#controls) · [Screenshots](#screenshots) · [Project structure](#project-structure) · [Documentation](docs/README.md)
+[Build and run](#build-and-run) · [Controls](#controls) · [Screenshots](#screenshots) · [Project report (PDF)](docs/report/conveyor_sorting_report.pdf) · [Project structure](#project-structure) · [Documentation](docs/README.md)
 
 ## Features
 
@@ -188,12 +188,13 @@ GitHub Actions builds the application and runs the simulation tests on Linux, ma
 | `Camera` | View transforms, movement, zoom, and camera presets |
 | `Shader` | GLSL compilation, linking, and uniform helpers |
 
-Build folders, virtual environments, generated PDFs/presentations, and temporary captures are ignored. The report sources and original screenshots are versioned under `docs/`.
+The published [project report PDF](docs/report/conveyor_sorting_report.pdf) is versioned with Git LFS. The report sources and original screenshots are also versioned under `docs/`. Build folders, virtual environments, other generated PDFs/presentations, and temporary captures are ignored.
 
 ## Documentation and credits
 
 - [Documentation index](docs/README.md)
 - [Original project specification](docs/project-specification.md) — proposed requirements; some differ from the final implementation.
+- [Final project report (PDF, 13 pages)](docs/report/conveyor_sorting_report.pdf) — report dated 7 October 2026, stored with Git LFS.
 - [Academic report and compilation instructions](docs/report/README.md)
 - [Report screenshot reproduction tools](docs/report/tools/README.md)
 

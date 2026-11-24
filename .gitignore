@@ -27,6 +27,7 @@ compile_commands.json
 /.presentation-build/
 *.pptx
 *.pdf
+!/docs/report/conveyor_sorting_report.pdf
 *.ppm
 /docs/report/tools/regenerated/
 

@@ -1,5 +1,14 @@
 # Academic LaTeX report
 
+**[Read or download the final project report (PDF, 13 pages)](conveyor_sorting_report.pdf)** — dated 7 October 2026.
+
+The PDF is stored with Git LFS. To download it into a local checkout, install Git LFS and run:
+
+```bash
+git lfs install
+git lfs pull
+```
+
 Main source: `conveyor_sorting_report.tex`
 
 This revision retains Libre Baskerville, the original technical content and all 25 screenshot placements. It uses formal section headings, black heading text, plain explanatory paragraphs and 1.5-line body spacing. The shading section includes the classic Phong reflection equation, Phong normal interpolation and Gouraud color interpolation, with the project's Blinn-Phong implementation distinguished explicitly. Proposed and implemented features remain clearly distinguished.
@@ -32,6 +41,6 @@ Common TeX packages: fontspec, lmodern, geometry, microtype, amsmath, amssymb, g
 
 Preserve these implementation distinctions: destinations are assigned at spawning; the scanner is simulated; the gate uses coordinated paths instead of contact forces; default Phong shading uses Blinn-Phong specular. Some objects, including low decorative cargo in the bins, are static. Collected deliveries free their slots rather than accumulating forever.
 
-From the repository root, first run `cd docs/report`, then use the compile commands above. Generated PDFs are ignored by Git; compile locally to obtain the report. Earlier exports and report archives remain in the workspace's ignored `output/` folder when available.
+From the repository root, first run `cd docs/report`, then use the compile commands above to rebuild the published PDF. This report PDF is tracked with Git LFS; other generated PDFs are ignored by Git. Earlier exports and report archives remain in the workspace's ignored `output/` folder when available.
 
 The implementation snapshot and validation notes describe the sources inspected for the October 2026 report. They are historical capture evidence; the repository README and build configuration may have changed since then.
